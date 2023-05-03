@@ -11,10 +11,10 @@ class Content extends React.Component {
        return (
         <div className='content'>
        <div className="content-cards">
-       <ContentCard/>
-       <ContentCard/>
-       <ContentCard/>
-       <ContentCard/>    
+       <ContentCard color1={"#FFA674"} color2={"#FF3737"} />
+       <ContentCard color1={"#BB65FF"} color2={"#4C6FFF"}/>
+       <ContentCard color1={"#FF974D"} color2={"#FFE925"}/>
+       <ContentCard color1={"#20AF62"} color2={"#17E783"}/>    
        </div>
        <h1 Style={"font-size:1.2rem; margin-top:2%; font-weight: 600;color: #102844;margin-left:4%"}>Most Popular</h1>
        <div className='courses'>

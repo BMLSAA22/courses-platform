@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     
     <div className='search-section'>
         <FontAwesomeIcon icon={faSearch} />
-        <p Style={"margin:5px;"}>search anything !</p>
+        <p Style={"margin:15px;"}>search anything</p>
     </div>
     <div className='right-section'>
         <NavBtn />

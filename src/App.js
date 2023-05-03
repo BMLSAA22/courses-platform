@@ -7,12 +7,13 @@ import CourseDetails from './course-details';
 function App() {
   return (
     <div className="App">
-      <CourseDetails />
+      
+       <CourseDetails />
       
       {/* <Sidebar/>
       <Navbar/>
-     <Content /> */}
-      
+      <Content />
+       */}
     </div>
   ); 
 }

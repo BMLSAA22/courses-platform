@@ -4,13 +4,12 @@ import { faAdd} from '@fortawesome/free-solid-svg-icons'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 class ContentCard extends React.Component {
-    render() {
-        const style={  background: "linear-gradient(225deg,"+" #FFA674"+" 0%, "+"#FF3737"+" 100%)"
-      };
+    render(props) {
+        const style="background:linear-gradient(225deg," + this.props.color1+" 10%, "+this.props.color2+" 100%);";
        return (
         <div className='content-card'>
             <div className='upper'>
-                <div className='left'>
+                <div className='left' Style={style}>
                     <FontAwesomeIcon icon={faAdd} />
 
 

@@ -9,12 +9,13 @@ import { faComment} from '@fortawesome/free-solid-svg-icons'
 
 class CoursePricing extends React.Component {
     render() {
-        const style="position:relative;width:22%;height:100%;background:white;margin:3%;border-radius:20px ;display:flex;flex-direction:column;justify-content:start;align-items:start"
-        return(<div Style={style}>
+        const  style="position:relative;width:22%;height:60%;background:white;margin:3%;border-radius:20px ;display:flex;flex-direction:column;justify-content:start;align-items:start"
+        return(<div className="course-pricing"Style={style}>
+            <div Style={"display:flex;align-items:center;justify-content:space-around;position:relative;width:90%;border:none;margin:5%;height:7%;border-radius:10px;background: #F8F8FB;border: 1px dashed rgba(0, 0, 0, 0.1);border-radius: 16px;font-size:1.5rem;font-weight:500"}>USD 199<div className="old-price"> 299$</div></div>
             <button Style={"position:relative;width:90%;border:none;margin:5%;height:7%;background:#4C6FFF;color:white;border-radius:10px"}>Buy Now</button>
             <h3 Style={'margin:5% 10% 5% 5%;color: #102844;font-weight:500'}>What you’ll learn</h3>
             <p Style={'margin:0% 5% 0% 5%;font-weight:400;font-size: 14px;line-height: 24px;color: #767278;'}> Access to IBM Cloud modelling what is I was looking for and Aaron got me the solution.</p>
-            <h3 Style={'margin:2% 5% 5% 5%;color: #102844;font-weight:500'}>This course includes:</h3>
+            <h3 Style={'margin:2% 5% 2% 5%;color: #102844;font-weight:500'}>This course includes:</h3>
             <C Style={""} icon={faComment} text={"100% Positive reviews (45)"}/>
             <C Style={""} icon={faAdd} text={"2167 students"}/>
             <C Style={""} icon={faVideo} text={"59 Lessons (9h 11m)"}/>
@@ -29,7 +30,7 @@ class CoursePricing extends React.Component {
   class C extends React.Component{
     render(props){
         return(
-            <div Style={"display:flex;position:relative;width:90%;margin:5%;5%; color:#102844;"}>
+            <div Style={"display:flex;position:relative;width:90%;margin:5%;60%; color:#102844;"}>
                 <FontAwesomeIcon className='addIcon' icon={this.props.icon} />
                 <p Style={"margin-left:10%;color:#767278;"}>{this.props.text}</p>
 
