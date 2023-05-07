@@ -8,12 +8,12 @@ function App() {
   return (
     <div className="App">
       
-       <CourseDetails />
+         {/* <CourseDetails />   */}
       
-      {/* <Sidebar/>
+        <Sidebar/>
       <Navbar/>
-      <Content />
-       */}
+      <Content />  
+        
     </div>
   ); 
 }

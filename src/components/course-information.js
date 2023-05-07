@@ -7,7 +7,7 @@ class CourseInformation extends React.Component {
     render() {
        return (
         <div className="">
-             <div className="text" Style={"position:relative;margin:2% 5%"}>
+             <div className="text" Style={"position:relative;margin:2% 7%"}>
                     <p Style={"font-family: 'Poppins';font-style: normal;font-weight: 400;color: #102844;"}> IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
 
                     Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.

@@ -408,14 +408,14 @@ padding:0.2rem
 .task .right h1{
   padding-top:25%;
   color: #102844;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
 .task .right {
   color: #767278;
   font-style: normal;
-  font-size: 0.8rem;
-  line-height: 1rem;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
 
 }
 .old-price{
@@ -447,8 +447,12 @@ color: #767278;
   transform: rotate(-7.54deg);
 
 }
+.Tabs *{
+  border:none
+}
+.Tabs .TabList .Tab {
+  background-color: #FF7800;
+}
 
 
-
-
-/*media queries*/
+/**/
