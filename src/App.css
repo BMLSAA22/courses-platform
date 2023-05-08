@@ -225,7 +225,7 @@ color: #767278;
   left: 17.36%;
   top:9.77%;
   width:82.64%;
-  height:100%;
+  /* height:100%; */
   background: #F5F5F5;
   
 }
@@ -234,7 +234,7 @@ color: #767278;
   width:100%;
   margin-top:2%;
   display:flex;
-  /* justify-content: space-around; */
+   justify-content: space-around; 
   align-items: flex-start;
   flex-wrap: wrap;
 }
@@ -262,7 +262,7 @@ flex-direction: column;
   mix-blend-mode: normal;
   border-radius: 50%;
   width:30%;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -305,13 +305,19 @@ color: #767278;
   justify-content: space-around;
   align-items: center;
 }
+.progress-bar{
+  position:relative;
+  border-radius: 10px;
+   height: 8px;
+}
+.progress-bar::-webkit-progress-value{
+  background: #4C6FFF;
+  border-radius: 20px;
+}
+.progress-bar::-webkit-progress-bar {
+  background: rgba(10,28,44,0.2);
 
-progress{
-  height: 8px;
-  border-radius: 14px;
-  color: red;
-  /* width:70% */
-
+  border-radius: 10px;
 }
 /* progress::-webkit-progress-bar {
 
@@ -325,26 +331,20 @@ progress::-webkit-progress-value {
   border-radius: 14px;
 } */
 /*course card*/
-.courses{
-  position: relative;
-  display: flex;
-  height:100%;
-  width:100%;
-  padding-top:5px;
-}
 .CourseCard{
   position:relative;
-  height:45%;
-  width:20%;
+  width:max(26%,250px);
+  aspect-ratio:16/12;
   background: #FFFFFF;
-border-radius: 16px;
-  margin-left:4%
+  border-radius: 16px;
+  margin-left:2%;
+  margin-top:5px;
 }
 .CourseCard img{
   position: relative;
   top:4%;
   width:85%;
-  height:50%;
+  aspect-ratio: 1.6;
   border-radius: 16px;
 }
 .course-categorie{
@@ -379,7 +379,7 @@ padding:0.2rem
 }
 .tasks{
   position:relative;
-  width:20%;
+  width:25%;
   margin-left:5%
 }
 .task{
@@ -387,7 +387,7 @@ padding:0.2rem
   position: relative;
   background-color: white;
   margin:5px 0;
-  border-radius: 8%;
+  border-radius: 20px;
 
 }
 .task .left{
@@ -396,7 +396,7 @@ padding:0.2rem
   background: #EAE7FF;
   border-radius: 20%;
   width:20%;
-  margin:10%
+  margin:5%
   /* margin:10% */
 }
 .task .left *{
