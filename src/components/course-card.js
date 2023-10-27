@@ -1,13 +1,24 @@
 import React from 'react';
+import {
+    useNavigate
+  } from "react-router-dom";
 
-class CourseCard extends React.Component {
-    render(props) {
-        return(<div className='CourseCard'>
-            <img src={this.props.image} alt=''></img>
-            <div className='course-categorie'>{this.props.categorie}</div>
+const CourseCard = (props) => {
+    let Navigate = useNavigate();
+    const handleCardClick = () => {
+        console.log('hello')
+        Navigate('/details'); 
+    };
+    
+
+    return (
+        <div className='CourseCard' onClick={handleCardClick}>
+            <img src={props.image} alt='' />
+            <div className='course-categorie'>{props.categorie}</div>
             <h1>Learning Maxon 4D Training Course</h1>
             <p>15 Lessons(10 h) <span>$140</span></p>
-        </div>);
-    }
-  }
+        </div>
+    );
+};
+
 export default CourseCard;

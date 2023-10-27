@@ -234,8 +234,8 @@ color: #767278;
   width:100%;
   margin-top:2%;
   display:flex;
-   justify-content: space-around; 
-  align-items: flex-start;
+   justify-content: space-Between; 
+  align-items: center;
   flex-wrap: wrap;
 }
 .content-card{
