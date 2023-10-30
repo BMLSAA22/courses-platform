@@ -1,8 +1,18 @@
 import React from 'react';
 import TutoSection from './tuto-section';
-class CourseTuto extends React.Component {
+import  { useState, useEffect } from 'react';
+function CourseTuto(props) {
+    useEffect(() => {
+        props.content.forEach(element => {
+            console.log(element.type)
+            
+        });
+    
+    
+    },[])
 
-    render() {
+
+   
         return(
 
             <div>
@@ -21,6 +31,6 @@ class CourseTuto extends React.Component {
             </div>
 
         );
-    }
+    
   }
 export default CourseTuto ;

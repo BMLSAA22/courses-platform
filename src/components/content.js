@@ -12,6 +12,7 @@ function Content() {
   
     
       const [data, setData] = useState([]);
+      
       useEffect(() => {
         fetch("http://127.0.0.1:5000/courses")
       .then((response) => {
@@ -24,7 +25,6 @@ function Content() {
       .then((data) => {
         let tmp=[]
         for (let item of data) {
-          console.log(item);
           tmp.push(item)
         }
         
@@ -59,14 +59,14 @@ function Content() {
         (Array.isArray(data))? 
        
        data.map((item, index) => (
-        <CourseCard image={"images/image.png"} categorie={"NADA"}/>
-       )): <CourseCard image={"images/image.png"} categorie={"NADANEG"}/>}
-       <CourseCard image={"images/image.png"} categorie={"Psychology"}/>
-       <CourseCard image={"images/image (1).png"} categorie={"Developement"}/>
-       <CourseCard image={"images/image (2).png"} categorie={"Scratch"}/>
-       <CourseCard image={"images/image.png"} categorie={"Psychology"}/>
-       <CourseCard image={"images/image (1).png"} categorie={"Developement"}/>
-       <CourseCard image={"images/image (2).png"} categorie={"Scratch"}/>
+        <CourseCard image={"images/image.png"} categorie={item.category} id={"653974762d29cfd3dd007791"}/>
+       )): <CourseCard image={"images/image.png"} categorie={"NADANEG"} id={"123"}/>}
+       <CourseCard image={"images/image.png"} categorie={"Psychology"} id={"653974762d29cfd3dd007791"}/>
+       <CourseCard image={"images/image (1).png"} categorie={"Developement"} id={"653974762d29cfd3dd007791"}/>
+       <CourseCard image={"images/image (2).png"} categorie={"Scratch"} id={"123"}/>
+       <CourseCard image={"images/image.png"} categorie={"Psychology"} id={"123"}/>
+       <CourseCard image={"images/image (1).png"} categorie={"Developement"} id={"123"}/>
+       <CourseCard image={"images/image (2).png"} categorie={"Scratch"} id={"123"}/>
        <CourseCard image={"images/image.png"} categorie={"Psychology"}/>
        <CourseCard image={"images/image (1).png"} categorie={"Developement"}/>
        <CourseCard image={"images/image (2).png"} categorie={"Scratch"}/>

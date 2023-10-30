@@ -7,26 +7,26 @@ const recordRoutes = express.Router();
  
 // This will help us connect to the database
 const dbo = require("../db/conn");
+client=dbo.getClient()
+
 
  
 // This help convert the id from string to ObjectId for the _id.
-const ObjectId = require("mongodb").ObjectId;
-const { MongoClient ,ServerApiVersion} = require("mongodb");
-const Db = "mongodb+srv://amayasbourahla46:%23SBINalla05@cluster0.0qdwydf.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(Db, {
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-      }})
+const ObjectId =new require("mongodb").ObjectId;
+// const { MongoClient ,ServerApiVersion} = require("mongodb");
+// const Db = "mongodb+srv://amayasbourahla46:%23SBINalla05@cluster0.0qdwydf.mongodb.net/?retryWrites=true&w=majority";
+// const client = new MongoClient(Db, {
+//     serverApi: {
+//         version: ServerApiVersion.v1,
+//         strict: true,
+//         deprecationErrors: true,
+//       }})
  
  
 // This section will help you get a list of all the records.
 recordRoutes.route("/courses").get(async function (req, res) {
     try {
-        // Connect the client to the server
-        await client.connect();
-        // Establish and verify connection
+        await client.connect()
         cols =await client.db("courses-platform").collection('course').find().toArray();
         console.log(cols);
       } finally {
@@ -38,15 +38,19 @@ res.json(cols)
 });
  
 // This section will help you get a single record by id
-recordRoutes.route("/course/:id").get(function (req, res) {
- let db_connect = dbo.getDb();
- let myquery = { _id: ObjectId(req.params.id) };
- db_connect
-   .collection("records")
-   .findOne(myquery, function (err, result) {
-     if (err) throw err;
-     res.json(result);
-   });
+recordRoutes.route("/course/:id").get(async function (req, res) {
+ 
+ await client.connect()
+ let myquery = { course_id: new ObjectId(req.params.id) };
+ let rslt=await client
+   .db("courses-platform")
+   .collection("course-details")
+   .find(myquery)
+   .toArray()
+  res.json(rslt)
+ 
+   
+   
 });
  
 // This section will help you create a new record.

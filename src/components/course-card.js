@@ -6,8 +6,9 @@ import {
 const CourseCard = (props) => {
     let Navigate = useNavigate();
     const handleCardClick = () => {
-        console.log('hello')
-        Navigate('/details'); 
+        
+        
+        Navigate('/details',{state:{id:props.id}}); 
     };
     
 

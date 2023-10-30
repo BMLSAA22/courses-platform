@@ -8,7 +8,7 @@ const client = new MongoClient(Db, {
       }
 });
  
-var _db;
+var _db =client;
  
 module.exports = {
   connectToServer: function (callback) {
@@ -23,7 +23,8 @@ module.exports = {
          });
   },
  
-  getDb: function () {
-    return _db;
+  getClient:  function () {
+    return  client
+    
   },
 };

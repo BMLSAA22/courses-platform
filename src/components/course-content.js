@@ -5,10 +5,37 @@ import CourseInformation from './course-information';
 import CourseTuto from './course-tuto';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import  { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 
-class CourseContent extends React.Component {
+function CourseContent(props)  {
+    const [data, setData] = useState(null);
+    const location=useLocation()
+    const id=location.state.id
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/course/"+id)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => { 
+        setData(data);
+        console.log(data[0].description)
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error); 
+      });
+        
+      }, []);
     
-    render() {
+        
+        
+        
+    
+    
+    
         const style="position:absolute; left: 17.36%;top:9.77%;width:82.64%;height:170%;background:#F8F8FB;display:flex;align-items:start;padding:1%"
         const mainStyle="position:relative;width:60%;background:white;border-radius:20px;"
        return (
@@ -28,11 +55,11 @@ class CourseContent extends React.Component {
                     <Tab Style={"border:none"}><p Style={"color: #102844;;border-radius:20px;padding:10px 15px;font-size:10px"}>community</p></Tab>
                     <Tab Style={"border:none"}><p Style={"color: #102844;;border-radius:20px;padding:10px 15px;font-size:10px"}> Students</p></Tab>
                     </TabList>
-                <TabPanel>
-                <CourseInformation />
+                    <TabPanel>
+                    {data ?<CourseInformation description={data[0].description} />:<p>There nothing to show</p>}
                 </TabPanel>
                 <TabPanel>
-                <CourseTuto /> 
+                {data ?<CourseTuto content={data[0].content} /> :<p Style={"padding:10px"}>There is nothing to show</p>}
                 </TabPanel>
                 </Tabs>
 
@@ -47,6 +74,6 @@ class CourseContent extends React.Component {
   
 
         );
-    }
+    
   }
 export default CourseContent
