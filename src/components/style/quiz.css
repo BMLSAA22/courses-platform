@@ -1,0 +1,85 @@
+
+
+
+.quiz{
+    padding:0;
+    position:relative;
+    width:83.5vw !important;
+    height:20vh;
+    left:17.5%;
+    z-index: 20;
+    top:12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin:2% 2%
+    
+  }
+  .options{
+    
+    flex-direction: column;
+    align-items: start;
+    justify-content:flex-start;
+  }
+  .options *{
+    display: flex;
+    align-items:start ;
+    justify-content: start;
+  }
+  label{
+    padding-top: 15px;
+  }
+  input{
+    margin-right:2vw
+    
+  }
+  
+  
+input[type="radio"] {
+    height:50px;
+    width:20px;
+    background-color: red;
+    cursor: pointer; 
+    
+}
+input[type=radio]:hover {
+  
+  width:25px;
+  border: 2px solid #000;
+  background-color: #fff;
+  accent-color: green;
+}
+
+/* Style the custom checkbox using a pseudo-element */
+input[type="radio"] label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    background-color: #fff;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+input[type=checkbox]{
+  height:20px;
+  margin-top:10px;
+  background-color: red;
+}
+/* button{
+margin: 10vh 70vw;
+border:none;
+background: #4C6FFF;
+border-radius: 6px;
+padding:1vh 2vw;
+color:white
+} */
+
+
+@media(max-width: 767px) {
+  .quiz{
+    width:100vw;
+    left:0
+  }
+}

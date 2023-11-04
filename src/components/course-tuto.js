@@ -2,9 +2,11 @@ import React from 'react';
 import TutoSection from './tuto-section';
 import  { useState, useEffect } from 'react';
 function CourseTuto(props) {
+    const data=props.content
     useEffect(() => {
+
         props.content.forEach(element => {
-            console.log(element.type)
+            console.log(element)
             
         });
     
@@ -22,12 +24,23 @@ function CourseTuto(props) {
                     <h3>Course1-introduction</h3>
                     <p>2 completed units of 11 available</p>
                 </div>
-                <button Style={"border:none;background: #4C6FFF;;width:15%;height:20%;border-radius:20px;  flex-shrink: 0;flex-grow: 0;"}>Go to unit 3</button>
+                {/* <button Style={"border:none;background: #4C6FFF;width:15%;height:25%;border-radius:20px;  "}>Go to unit 3</button> */}
 
             </div>
+            {data.map((el,index)=>(
+                
+                <TutoSection title={el.title} parts={el.parts}/>
+            ))}
             
-            <TutoSection />
-            <TutoSection />
+            
+            
+            
+        
+            
+           
+            
+            
+            
             </div>
 
         );

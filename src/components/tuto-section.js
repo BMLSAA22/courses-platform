@@ -2,6 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle} from '@fortawesome/free-solid-svg-icons'
 import { faCheck} from '@fortawesome/free-solid-svg-icons'
+import { faFileText } from '@fortawesome/free-solid-svg-icons';
+
+import Quiz from './quiz';
 
 
 class TutoSection extends React.Component {
@@ -20,9 +23,11 @@ class TutoSection extends React.Component {
 
       }
     render() {
+      console.log("Tuto sec")
+      console.log(this)
         return(<div >
- <div Style={"padding:3%"}>
-            <div Style={"display:flex;justify-content:space-between"}><h2>Course 1 - Introduction</h2>
+ <div Style={"padding:1% 1% "}>
+            <div Style={"display:flex;justify-content:space-between"}><h2>{this.props.title}</h2>
             <button onClick={this.handleClick} Style={"background:white;border:none"}><img src={this.state.image}></img></button></div>
             <div Style={"display:"+this.state.display}>
             {/* <div Style={"display:flex;justify-content:space-between"}>
@@ -33,7 +38,13 @@ class TutoSection extends React.Component {
            <FontAwesomeIcon icon={faCheck} Style={"color: #30A876"}/>
 
            </div> */}
-           <TutoUnit isfinished={true} />
+           {/* {this.parts.map((el,index)=>(
+                <TutoUnit isfinished={true}/>
+            ))} */}
+            {this.props.parts ?
+            this.props.parts.map((el, index) => (
+           <TutoUnit isfinished={true} part={el}  />) ):<p>noting to show</p>}
+           
             </div>
             </div>
 
@@ -47,11 +58,12 @@ class TutoUnit extends React.Component {
         super(props);
     }
     render(){
+      console.log(this.props)
         return(
             <div Style={"display:flex;justify-content:space-between"}>
                 <div Style={"display:flex;justify-content:flex-start;margin-top:1%"}>
-           <FontAwesomeIcon icon={faPlayCircle} />
-           <p Style={"margin-left:10px;color: #102844;"}>U1:presentation</p>
+           <FontAwesomeIcon icon={faFileText} />
+           <p Style={"margin-left:10px;color: #102844;"}>{this.props.part.text}</p>
            </div>
            { this.props.isfinished ?<FontAwesomeIcon icon={faCheck} Style={"color: #30A876"}/> : null}
 

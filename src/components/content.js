@@ -60,7 +60,7 @@ function Content() {
        
        data.map((item, index) => (
         <CourseCard image={"images/image.png"} categorie={item.category} id={"653974762d29cfd3dd007791"}/>
-       )): <CourseCard image={"images/image.png"} categorie={"NADANEG"} id={"123"}/>}
+       )): null}
        <CourseCard image={"images/image.png"} categorie={"Psychology"} id={"653974762d29cfd3dd007791"}/>
        <CourseCard image={"images/image (1).png"} categorie={"Developement"} id={"653974762d29cfd3dd007791"}/>
        <CourseCard image={"images/image (2).png"} categorie={"Scratch"} id={"123"}/>

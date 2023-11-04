@@ -56,8 +56,9 @@ recordRoutes.route("/course/:id").get(async function (req, res) {
 // This section will help you create a new record.
 recordRoutes.route("/record/add").post(function (req, response) {
  let db_connect = dbo.getDb();
+ console.log()
  let myobj = {
-   name: req.body.name,
+   name: req.prams.name,
    position: req.body.position,
    level: req.body.level,
  };
@@ -66,6 +67,23 @@ recordRoutes.route("/record/add").post(function (req, response) {
    response.json(res);
  });
 });
+
+recordRoutes.route("/user").get(async function (req, res) {
+  await client.connect()
+  
+  let myobj = {
+    email: req.query.email,
+    password: req.query.password,
+    
+  };
+  console.log(myobj)
+  let rslt=await client
+   .db("courses-platform")
+   .collection("users")
+   .find(myobj)
+   .toArray()
+  res.json(rslt)
+ });
  
 // This section will help you update a record by id.
 recordRoutes.route("/update/:id").post(function (req, response) {

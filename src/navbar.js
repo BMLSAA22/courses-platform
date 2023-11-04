@@ -8,6 +8,7 @@ import { faListUl} from '@fortawesome/free-solid-svg-icons'
 class Navbar extends React.Component {
     render() {
       return <div className='navbar'>
+      
     
     <div className='search-section'>
         <FontAwesomeIcon icon={faSearch} />
